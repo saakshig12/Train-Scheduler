@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Employee Time Sheet</title>
+   <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+</head>
+
+<body>
+   <div class="jumbotron text-center">
+       <h1 class="h1">Train Schedule</h1>
+       <h3 class="h3">List of the next available train.</h3>
+   </div>
+   <row>
+       <div class="container">
+           <row>
+               <div id="current-employees" class="text-center">
+                   <h5 class="bg-light text-left">Current Train Schedule</h5>
+                   <table id="ce-table" class="table">
+                       <thead>
+                           <tr>
+                               <th class="ml-10">Train Name</th>
+                               <th scope="col">Destination</th>
+                               <th scope="col">Frequency (min)</th>
+                               <th scope="col">Next arrival</th>
+                               <th scope="col">Minutes Away</th>
+                           </tr>
+                       </thead>
+                       <tbody id="ce-data">
+
+                       </tbody>
+                   </table>
+
+               </div>
+           </row>
+           <row>
+               <div id="new-employee-form">
+                   <h5 class="bg-light text-left">Add Train</h5>
+                   <form>
+                       <div class="form-group">
+                           <label for="employee-name">Train Name</label>
+                           <input type="text" class="form-control" id="employee-name" placeholder="Enter Name">
+
+                       </div>
+                       <div class="form-group">
+                           <label for="employee-role">Destination</label>
+                           <input type="text" class="form-control" id="employee-role" placeholder="Enter Position">
+
+                       </div>
+                       <div class="form-group">
+                           <label for="start-date">First Train Time HH:MM (military time)</label>
+                           <input type="text" class="form-control" id="start-date" placeholder="MM/DD/YYYY">
+
+                       </div>
+                       <div class="form-group">
+                           <label for="monthly-rate">Frequency (mim)</label>
+                           <input type="text" class="form-control" id="monthly-rate" placeholder="Enter Monthly Rate">
+
+                       </div>
+                   </form>
+                   <button type="submit" id="formsubmit" class="btn btn-primary float-right">Send</button>
+               </div>
+           </row>
+       </div>
+
+   </row>
+   <script
+   src="https://code.jquery.com/jquery-3.4.1.min.js"
+   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+   crossorigin="anonymous"></script>
+   <script src="moment.js"></script>
+</body>
+
+</html>
